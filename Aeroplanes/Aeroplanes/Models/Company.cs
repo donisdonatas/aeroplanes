@@ -13,7 +13,6 @@ namespace Aeroplanes.Models
         public string companyName;
         public int companyCountryId;
 
-
         public Company(string name, int countryId)
         {
             int countCompanysInRepository = CompanyRepository.companys.Count;
@@ -28,22 +27,6 @@ namespace Aeroplanes.Models
 
             companyName = name;
             companyCountryId = countryId;
-        }
-
-
-        public void GetAircraftModelsList()
-        {
-            if (CompanyRepository.companys.Count != 0)
-            {
-                for (int i = 0; i < CompanyRepository.companys.Count; i++)
-                {
-                    Console.WriteLine($"{CompanyRepository.companys[i].companyId}: {CompanyRepository.companys[i].companyName}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Company List is Empty!");
-            }
         }
     }
 }

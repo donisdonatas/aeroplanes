@@ -13,7 +13,6 @@ namespace Aeroplanes.Reports
         /**
          * https://www.dotnetperls.com/static-list
          */
- 
         
         public List<Aircraft> aircrats_db = AircraftRepository.Retrieve();
         public List<AircraftModel> aircraftsModels_db = AircraftModelRepository.Retrieve();
@@ -70,7 +69,6 @@ namespace Aeroplanes.Reports
         
         public void GenerateReportAircraftInEurope()
         {
-            //List<ReportItem> report = new List<ReportItem>();
             string aircraftTailNumber;
             string modelNumber;
             string modelDescription;
@@ -93,9 +91,6 @@ namespace Aeroplanes.Reports
 
                 ReportItemRepository.report.Add(new ReportItem(aircraftTailNumber, modelNumber, modelDescription, ownerComapanyName, companyCountryCode, companyCountryName, isEuCountry));
             }
-
-            //return report;
         }
-        
     }
 }

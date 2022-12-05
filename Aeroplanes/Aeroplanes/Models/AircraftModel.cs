@@ -12,7 +12,6 @@ namespace Aeroplanes.Models
         public int aircraftModelId;
         public string aircraftModelType;
         public string AircraftModelName;
-        
 
         public AircraftModel(string type, string name)
         {
@@ -28,21 +27,6 @@ namespace Aeroplanes.Models
 
             aircraftModelType = type;
             AircraftModelName = name;
-        }
-        
-        public void GetAircraftModelsList()
-        {
-            if (AircraftModelRepository.aircraftModels.Count != 0)
-            {
-                for (int i = 0; i < AircraftModelRepository.aircraftModels.Count; i++)
-                {
-                    Console.WriteLine($"{AircraftModelRepository.aircraftModels[i].aircraftModelId}: {AircraftModelRepository.aircraftModels[i].aircraftModelType} - {AircraftModelRepository.aircraftModels[i].AircraftModelName}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Aircraft Models List is Empty!");
-            }
         }
     }
 }

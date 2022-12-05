@@ -31,20 +31,5 @@ namespace Aeroplanes.Models
             countryName = name;
             isEuropeCountry = isEUcountry;
         }
-
-        public void GetCountryList()
-        {
-            if(CountryRepository.countries.Count != 0)
-            {
-                for (int i = 0; i < CountryRepository.countries.Count; i++)
-                {
-                    Console.WriteLine($"{CountryRepository.countries[i].countryId}: {CountryRepository.countries[i].countryCode} - {CountryRepository.countries[i].countryName}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Counrty List is Empty!");
-            }
-        }
     }
 }

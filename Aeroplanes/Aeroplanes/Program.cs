@@ -13,36 +13,15 @@ namespace Aeroplanes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("labas, čia dispečerinė");
-
+            Console.WriteLine("Labas, čia dispečerinė");
 
             DefoultValues.AddDefoultValuesToAllRepositories();
 
-            //DefoultValues.AddDefoultCountriesToRepository();
-            //country.AddDefoultCountriesToRepository();
-            //country.AddDefoultCountriesToRepository();
-            //country.GetCountryList();
             Console.WriteLine("-----------------");
 
-            //AircraftModel aircrafModel = new AircraftModel("E75S", "Embraer E175STD");
-            //AircraftModelRepository.aircraftModel.Add(aircrafModel);
-            //aircrafModel.AddDefoultAircraftModelsToRepository();
-            //aircrafModel.GetAircraftModelsList();
-
-            //ReportGenerator report = new ReportGenerator();
-            Console.WriteLine("-----------------");
-            //report.ReadAllRepositories();
             HTMLGenerator Html = new HTMLGenerator();
-            //ReportGenerator report = new ReportGenerator();
             Html.GenerateHTMLWithColor();
 
-            Console.WriteLine("-----------------");
-            Console.WriteLine("-----------------");
-
-            //ReportGenerator report = new ReportGenerator();
-            //report.GenerateReportAircraftInEurope();
-
-            Console.WriteLine();
             Console.ReadLine();
         }
     }
