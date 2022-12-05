@@ -1,0 +1,8 @@
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\bin\Debug\Aeroplanes.exe.config
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\bin\Debug\Aeroplanes.exe
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\bin\Debug\Aeroplanes.pdb
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\obj\Debug\Aeroplanes.csproj.AssemblyReference.cache
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\obj\Debug\Aeroplanes.csproj.SuggestedBindingRedirects.cache
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\obj\Debug\Aeroplanes.csproj.CoreCompileInputs.cache
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\obj\Debug\Aeroplanes.exe
+H:\Shared drives\MG_donisdonatas\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Aeroplanes\Aeroplanes\obj\Debug\Aeroplanes.pdb

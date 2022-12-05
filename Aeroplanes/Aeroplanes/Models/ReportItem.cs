@@ -1,0 +1,31 @@
+﻿using Aeroplanes.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aeroplanes.Models
+{
+    public class ReportItem
+    {
+        public string aircraftTailNumber;
+        public string modelNumber;
+        public string modelDescription;
+        public string ownerComapanyName;
+        public string companyCountryCode;
+        public string companyCountryName;
+        public bool   isEuropeCountry;
+
+        public ReportItem(string tailNr, string modelNr, string modelDscrpt, string companyName, string countryCode, string countryName, bool isEU)
+        {
+            aircraftTailNumber = tailNr;
+            modelNumber = modelNr;
+            modelDescription = modelDscrpt;
+            ownerComapanyName = companyName;
+            companyCountryCode = countryCode;
+            companyCountryName = countryName;
+            isEuropeCountry = isEU;
+        }
+    }
+}
