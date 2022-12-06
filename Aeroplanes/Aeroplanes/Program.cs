@@ -17,7 +17,7 @@ namespace Aeroplanes
             Console.WriteLine("Labas, čia dispečerinė");
             Console.WriteLine("----------------------");
 
-            DefaultValues.AddDefoultValuesToAllRepositories();
+            DefaultValues.AddDefaultValuesToAllRepositories();
 
             Console.WriteLine("----------------------");
 
