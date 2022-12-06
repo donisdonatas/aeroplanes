@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aeroplanes.Reports;
+using Aeroplanes.Servises;
 
 namespace Aeroplanes
 {
@@ -14,13 +15,21 @@ namespace Aeroplanes
         static void Main(string[] args)
         {
             Console.WriteLine("Labas, čia dispečerinė");
+            Console.WriteLine("----------------------");
 
-            DefoultValues.AddDefoultValuesToAllRepositories();
+            DefaultValues.AddDefoultValuesToAllRepositories();
 
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
 
             HTMLGenerator Html = new HTMLGenerator();
-            Html.GenerateHTMLWithColor();
+            string htmlText = Html.GenerateHTMLWithColor();
+
+            Console.WriteLine("----------------------");
+
+            /*
+            EmailServices sendEmail = new EmailServices();
+            sendEmail.SendEmail(htmlText);
+            */
 
             Console.ReadLine();
         }

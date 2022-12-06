@@ -26,7 +26,7 @@ namespace Aeroplanes.Reports
             {
                 Console.WriteLine($"{aircraft.aircraftId}. {aircraft.aircraftRegistrationNumber} - [{aircraft.aircraftModelId}] [{aircraft.aircraftOwnerId}]");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
 
         public void ReadAircraftsModelRepository()
@@ -36,7 +36,7 @@ namespace Aeroplanes.Reports
             {
                 Console.WriteLine($"{model.aircraftModelId}. {model.aircraftModelType} - {model.AircraftModelName}");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
 
         public void ReadCompanyRepository()
@@ -46,7 +46,7 @@ namespace Aeroplanes.Reports
             {
                 Console.WriteLine($"{company.companyId}. {company.companyName} [{company.companyCountryId}]");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
 
         public void ReadCountrysRepository()
@@ -56,7 +56,7 @@ namespace Aeroplanes.Reports
             {
                 Console.WriteLine($"{country.countryId}. {country.countryCode} - {country.countryName}");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
         
         public void ReadAllRepositories()

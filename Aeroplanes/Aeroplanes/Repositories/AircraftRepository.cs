@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aeroplanes.Repositories
 {
-    internal static class AircraftRepository
+    public static class AircraftRepository
     {
         public static List<Aircraft> aircrafts = new List<Aircraft>();
 

@@ -12,7 +12,7 @@ namespace Aeroplanes.Reports
 {
     public class HTMLGenerator
     {
-        public void GenerateHTMLWithColor()
+        public string GenerateHTMLWithColor()
         {
             ReportGenerator report = new ReportGenerator();
             report.GenerateReportAircraftInEurope();
@@ -21,10 +21,10 @@ namespace Aeroplanes.Reports
             htmlOutput += "<table style='border: solid 1px black;'>";
             htmlOutput += "<tr style='background-color: rgba(0, 0, 0, 0.8); color: rgb(255, 255, 255);'><th>Aircraft Tail Number</th><th>Model Number</th><th>Model Description</th><th>Owner Company Name</th><th>Company Country Code</th><th>Company Country Name</th></th>";
 
-            Console.WriteLine(String.Format("|{0,-10}|{1,-10}|{2,-35}|{3,-20}|{4,-15}|{5,-20}|", "Tail Nr.", "Model Nr.", "Model Description", "Owner Company Name", "Country Code", "Country Name"));
+            Console.WriteLine(String.Format("| {0,-10}| {1,-10}| {2,-32}| {3,-18}| {4,-15}| {5,-15}|", "Tail Nr.", "Model Nr.", "Model Description", "Owner Company Name", "Country Code", "Country Name"));
             foreach (ReportItem reportLine in reportOutput)
             {
-               Console.WriteLine(String.Format("|{0,-8}{6, -2}|{1,-10}|{2,-35}|{3,-20}|{4,-15}|{5,-20}|", reportLine.aircraftTailNumber, reportLine.modelNumber, reportLine.modelDescription, reportLine.ownerComapanyName, reportLine.companyCountryCode, reportLine.companyCountryName, !reportLine.isEuropeCountry ? "*" : ""));
+               Console.WriteLine(String.Format("| {0,-8}{6, -2}| {1,-10}| {2,-32}| {3,-18}| {4,-15}| {5,-15}|", reportLine.aircraftTailNumber, reportLine.modelNumber, reportLine.modelDescription, reportLine.ownerComapanyName, reportLine.companyCountryCode, reportLine.companyCountryName, !reportLine.isEuropeCountry ? "*" : ""));
                 string rowStyle;
                 if(reportLine.isEuropeCountry)
                 {
@@ -40,10 +40,10 @@ namespace Aeroplanes.Reports
 
             File.WriteAllText(@"H:\Shared drives\MG donisdonatas@gmail.com\Code Academy\Paskaitos\dotNET\Savarankiskas darbas - Aerocrafts\Ariving Aeroplanes report.html", htmlOutput);
             Console.WriteLine("* - Non Europe Country");
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
             Console.WriteLine("HTML Report created.");
-            Console.ReadLine();
-            
+
+            return htmlOutput;
         }
     }
 }

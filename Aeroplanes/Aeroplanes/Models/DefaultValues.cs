@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Aeroplanes.Models
 {
-    public static class DefoultValues
+    public static class DefaultValues
     {
         private static bool isDefoultCountriesAdded = false;
         private static bool isDefoultAicraftModelsAdded = false;
@@ -28,11 +28,11 @@ namespace Aeroplanes.Models
                 CountryRepository.countries.Add(new Country("PL", "Poland", true));
                 CountryRepository.countries.Add(new Country("TR", "Turkey", false));
                 isDefoultCountriesAdded = true;
-                Console.WriteLine("Defoult Country List was added to CountryRepository");
+                Console.WriteLine("Default Country List was added to CountryRepository");
             }
             else
             {
-                Console.WriteLine("Defoult Country List is already added");
+                Console.WriteLine("Default Country List is already added");
             }
         }
 
@@ -54,11 +54,11 @@ namespace Aeroplanes.Models
                 AircraftModelRepository.aircraftModels.Add(new AircraftModel("E190", "Embraer E190LR"));
                 AircraftModelRepository.aircraftModels.Add(new AircraftModel("E75S", "Embraer E175LR"));
                 isDefoultAicraftModelsAdded = true;
-                Console.WriteLine("Defoult Aircrafts Model List was added to AircraftModelRepository");
+                Console.WriteLine("Default Aircrafts Model List was added to AircraftModelRepository");
             }
             else
             {
-                Console.WriteLine("Defoult Aircraft Models List is already added");
+                Console.WriteLine("Default Aircraft Models List is already added");
             }
         }
 
@@ -78,11 +78,11 @@ namespace Aeroplanes.Models
                 CompanyRepository.companys.Add(new Company("Ryanair", 4));
                 CompanyRepository.companys.Add(new Company("Wizz Air", 3));
                 isDefoultCompanysAdded = true;
-                Console.WriteLine("Defoult Companies List was added to CompanyRepository");
+                Console.WriteLine("Default Companies List was added to CompanyRepository");
             }
             else
             {
-                Console.WriteLine("Defoult Aircraft Models List is already added");
+                Console.WriteLine("Default Aircraft Models List is already added");
             }
         }
 
@@ -107,11 +107,11 @@ namespace Aeroplanes.Models
                 AircraftRepository.aircrafts.Add(new Aircraft("SP-LIO", 13, 6));
                 AircraftRepository.aircrafts.Add(new Aircraft("SP-RSF", 7, 9));
                 isDefoultAircraftsAdded = true;
-                Console.WriteLine("Defoult Aircrafts List was added to AircraftRepository");
+                Console.WriteLine("Default Aircrafts List was added to AircraftRepository");
             }
             else
             {
-                Console.WriteLine("Defoult Aircrafts List is already added");
+                Console.WriteLine("Default Aircrafts List is already added");
             }
         }
 
