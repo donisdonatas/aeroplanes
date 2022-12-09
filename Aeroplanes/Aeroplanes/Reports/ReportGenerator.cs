@@ -7,15 +7,15 @@ namespace Aeroplanes.Reports
 {
     public class ReportGenerator
     {
-        public List<Aircraft> aircrats_db = AircraftRepository.Retrieve();
-        public List<AircraftModel> aircraftsModels_db = AircraftModelRepository.Retrieve();
-        public List<Company> companys_db = CompanyRepository.Retrieve();
-        public List<Country> countrys_db = CountryRepository.Retrieve();
+        public List<Aircraft> aircratsDatabase = AircraftRepository.Retrieve();
+        public List<AircraftModel> aircraftsModelsDatabase = AircraftModelRepository.Retrieve();
+        public List<Company> companysDatabase = CompanyRepository.Retrieve();
+        public List<Country> countrysDatabase = CountryRepository.Retrieve();
 
         public void ReadAircraftsRepository()
         {
             Console.WriteLine("AircraftRepository");
-            foreach (Aircraft aircraft in aircrats_db)
+            foreach (Aircraft aircraft in aircratsDatabase)
             {
                 Console.WriteLine($"{aircraft.aircraftId}. {aircraft.aircraftRegistrationNumber} - [{aircraft.aircraftModelId}] [{aircraft.aircraftOwnerId}]");
             }
@@ -25,7 +25,7 @@ namespace Aeroplanes.Reports
         public void ReadAircraftsModelRepository()
         {
             Console.WriteLine("AircraftModelRepository");
-            foreach (AircraftModel model in aircraftsModels_db)
+            foreach (AircraftModel model in aircraftsModelsDatabase)
             {
                 Console.WriteLine($"{model.aircraftModelId}. {model.aircraftModelType} - {model.aircraftModelName}");
             }
@@ -35,7 +35,7 @@ namespace Aeroplanes.Reports
         public void ReadCompanyRepository()
         {
             Console.WriteLine("CompanyRepository");
-            foreach(Company company in companys_db)
+            foreach(Company company in companysDatabase)
             {
                 Console.WriteLine($"{company.companyId}. {company.companyName} [{company.companyCountryId}]");
             }
@@ -45,7 +45,7 @@ namespace Aeroplanes.Reports
         public void ReadCountrysRepository()
         {
             Console.WriteLine("CountryRepository");
-            foreach(Country country in countrys_db)
+            foreach(Country country in countrysDatabase)
             {
                 Console.WriteLine($"{country.countryId}. {country.countryCode} - {country.countryName}");
             }
@@ -70,7 +70,7 @@ namespace Aeroplanes.Reports
             string companyCountryName;
             bool isEuCountry;
 
-            foreach(Aircraft aircraft in aircrats_db)
+            foreach(Aircraft aircraft in aircratsDatabase)
             {
                 aircraftTailNumber = aircraft.aircraftRegistrationNumber;
                 AircraftModel aircraftModelData = AircraftModelRepository.Retrieve(aircraft.aircraftModelId);

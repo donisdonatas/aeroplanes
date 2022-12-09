@@ -1,11 +1,4 @@
-﻿using Aeroplanes.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aeroplanes.Models
+﻿namespace Aeroplanes.Models
 {
     public class ReportItem
     {

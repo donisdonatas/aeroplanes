@@ -18,6 +18,7 @@ namespace Aeroplanes.Reports
             string pathToHTMLreport = Path.GetFullPath(Path.Combine(System.IO.Directory.GetCurrentDirectory(), @"..\..\..\Ariving Aeroplanes report.html"));
             File.WriteAllText(pathToHTMLreport, htmlOutput);
             Console.WriteLine($"HTML Report saved: {pathToHTMLreport}");
+            System.Diagnostics.Process.Start(pathToHTMLreport);
             return htmlOutput;
         }
 
