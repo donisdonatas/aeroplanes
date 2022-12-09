@@ -2,18 +2,11 @@
 using Aeroplanes.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aeroplanes.Reports
 {
     public class ReportGenerator
     {
-        /**
-         * https://www.dotnetperls.com/static-list
-         */
-        
         public List<Aircraft> aircrats_db = AircraftRepository.Retrieve();
         public List<AircraftModel> aircraftsModels_db = AircraftModelRepository.Retrieve();
         public List<Company> companys_db = CompanyRepository.Retrieve();
@@ -34,7 +27,7 @@ namespace Aeroplanes.Reports
             Console.WriteLine("AircraftModelRepository");
             foreach (AircraftModel model in aircraftsModels_db)
             {
-                Console.WriteLine($"{model.aircraftModelId}. {model.aircraftModelType} - {model.AircraftModelName}");
+                Console.WriteLine($"{model.aircraftModelId}. {model.aircraftModelType} - {model.aircraftModelName}");
             }
             Console.WriteLine("----------------------");
         }
@@ -81,8 +74,8 @@ namespace Aeroplanes.Reports
             {
                 aircraftTailNumber = aircraft.aircraftRegistrationNumber;
                 AircraftModel aircraftModelData = AircraftModelRepository.Retrieve(aircraft.aircraftModelId);
-                modelNumber = aircraftModelData.aircraftModelType;      //   AircraftModelRepository.Retrieve(aircraft.aircraftModelId).aircraftModelType;
-                modelDescription = aircraftModelData.AircraftModelName; //   AircraftModelRepository.Retrieve(aircraft.aircraftModelId).AircraftModelName;
+                modelNumber = aircraftModelData.aircraftModelType;
+                modelDescription = aircraftModelData.aircraftModelName;
                 Company companyData = CompanyRepository.Retrieve(aircraft.aircraftOwnerId);
                 ownerComapanyName = companyData.companyName;
                 companyCountryCode = CountryRepository.Retrieve(companyData.companyCountryId).countryCode;

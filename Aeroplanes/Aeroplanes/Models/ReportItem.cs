@@ -17,7 +17,7 @@ namespace Aeroplanes.Models
         public string companyCountryName;
         public bool   isEuropeCountry;
 
-        public ReportItem(string tailNr, string modelNr, string modelDscrpt, string companyName, string countryCode, string countryName, bool isEU)
+        public ReportItem(string tailNr, string modelNr, string modelDscrpt, string companyName, string countryCode, string countryName, bool isEUcountry)
         {
             aircraftTailNumber = tailNr;
             modelNumber = modelNr;
@@ -25,7 +25,7 @@ namespace Aeroplanes.Models
             ownerComapanyName = companyName;
             companyCountryCode = countryCode;
             companyCountryName = countryName;
-            isEuropeCountry = isEU;
+            isEuropeCountry = isEUcountry;
         }
     }
 }

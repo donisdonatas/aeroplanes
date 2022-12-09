@@ -58,7 +58,7 @@
     <Compile Include="Repositories\CompanyRepository.cs" />
     <Compile Include="Repositories\CountryRepository.cs" />
     <Compile Include="Repositories\ReportItemRepository.cs" />
-    <Compile Include="Services\EmailServices.cs" />
+    <Compile Include="Services\EmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

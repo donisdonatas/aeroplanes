@@ -1,9 +1,5 @@
 ﻿using Aeroplanes.Repositories;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aeroplanes.Models
 {
@@ -11,22 +7,13 @@ namespace Aeroplanes.Models
     {
         public int aircraftModelId;
         public string aircraftModelType;
-        public string AircraftModelName;
+        public string aircraftModelName;
 
         public AircraftModel(string type, string name)
         {
-            int countAircraftTypesInRepository = AircraftModelRepository.aircraftModels.Count;
-            if (countAircraftTypesInRepository != 0)
-            {
-                aircraftModelId = AircraftModelRepository.aircraftModels.Last().aircraftModelId + 1;
-            }
-            else
-            {
-                aircraftModelId = 1;
-            }
-
+            aircraftModelId = (AircraftModelRepository.aircraftModels.Count > 0) ? AircraftModelRepository.aircraftModels.Last().aircraftModelId + 1 : 1;
             aircraftModelType = type;
-            AircraftModelName = name;
+            aircraftModelName = name;
         }
     }
 }
