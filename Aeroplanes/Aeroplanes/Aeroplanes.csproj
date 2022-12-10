@@ -47,7 +47,7 @@
     <Compile Include="Models\AircraftModel.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\DefoultValues.cs" />
+    <Compile Include="Models\DefaultValues.cs" />
     <Compile Include="Models\ReportItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,9 +58,11 @@
     <Compile Include="Repositories\CompanyRepository.cs" />
     <Compile Include="Repositories\CountryRepository.cs" />
     <Compile Include="Repositories\ReportItemRepository.cs" />
+    <Compile Include="Services\EmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
