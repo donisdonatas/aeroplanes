@@ -1,13 +1,9 @@
 ﻿using Aeroplanes.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aeroplanes.Repositories
 {
-    internal static class AircraftRepository
+    public static class AircraftRepository
     {
         public static List<Aircraft> aircrafts = new List<Aircraft>();
 

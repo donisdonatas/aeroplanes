@@ -1,11 +1,7 @@
-﻿using Aeroplanes.Repositories;
-using Aeroplanes.Models;
+﻿using Aeroplanes.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Aeroplanes.Reports;
+using Aeroplanes.Servises;
 
 namespace Aeroplanes
 {
@@ -13,36 +9,23 @@ namespace Aeroplanes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("labas, čia dispečerinė");
+            Console.WriteLine("Hello, this is Control Tower");
+            Console.WriteLine("----------------------");
 
+            //Adding default values to repositories. Simulating database.
+            DefaultValues.AddDefaultValuesToAllRepositories();
+            Console.WriteLine("----------------------");
 
-            DefoultValues.AddDefoultValuesToAllRepositories();
-
-            //DefoultValues.AddDefoultCountriesToRepository();
-            //country.AddDefoultCountriesToRepository();
-            //country.AddDefoultCountriesToRepository();
-            //country.GetCountryList();
-            Console.WriteLine("-----------------");
-
-            //AircraftModel aircrafModel = new AircraftModel("E75S", "Embraer E175STD");
-            //AircraftModelRepository.aircraftModel.Add(aircrafModel);
-            //aircrafModel.AddDefoultAircraftModelsToRepository();
-            //aircrafModel.GetAircraftModelsList();
-
-            //ReportGenerator report = new ReportGenerator();
-            Console.WriteLine("-----------------");
-            //report.ReadAllRepositories();
+            //Creating HTML report, and later passing him to EmailService
             HTMLGenerator Html = new HTMLGenerator();
-            //ReportGenerator report = new ReportGenerator();
-            Html.GenerateHTMLWithColor();
+            string htmlText = Html.GenerateHTMLWithColor();
+            Console.WriteLine("----------------------");
 
-            Console.WriteLine("-----------------");
-            Console.WriteLine("-----------------");
+            //Service to send raport via Email to Airaport director
+            EmailService sendEmail = new EmailService();
+            string recipientsEmail = "d2b@dr.com";
+            sendEmail.SendEmail(htmlText, recipientsEmail);
 
-            //ReportGenerator report = new ReportGenerator();
-            //report.GenerateReportAircraftInEurope();
-
-            Console.WriteLine();
             Console.ReadLine();
         }
     }

@@ -2,62 +2,54 @@
 using Aeroplanes.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aeroplanes.Reports
 {
     public class ReportGenerator
     {
-        /**
-         * https://www.dotnetperls.com/static-list
-         */
- 
-        
-        public List<Aircraft> aircrats_db = AircraftRepository.Retrieve();
-        public List<AircraftModel> aircraftsModels_db = AircraftModelRepository.Retrieve();
-        public List<Company> companys_db = CompanyRepository.Retrieve();
-        public List<Country> countrys_db = CountryRepository.Retrieve();
+        public List<Aircraft> aircratsDatabase = AircraftRepository.Retrieve();
+        public List<AircraftModel> aircraftsModelsDatabase = AircraftModelRepository.Retrieve();
+        public List<Company> companysDatabase = CompanyRepository.Retrieve();
+        public List<Country> countrysDatabase = CountryRepository.Retrieve();
 
         public void ReadAircraftsRepository()
         {
             Console.WriteLine("AircraftRepository");
-            foreach (Aircraft aircraft in aircrats_db)
+            foreach (Aircraft aircraft in aircratsDatabase)
             {
                 Console.WriteLine($"{aircraft.aircraftId}. {aircraft.aircraftRegistrationNumber} - [{aircraft.aircraftModelId}] [{aircraft.aircraftOwnerId}]");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
 
         public void ReadAircraftsModelRepository()
         {
             Console.WriteLine("AircraftModelRepository");
-            foreach (AircraftModel model in aircraftsModels_db)
+            foreach (AircraftModel model in aircraftsModelsDatabase)
             {
-                Console.WriteLine($"{model.aircraftModelId}. {model.aircraftModelType} - {model.AircraftModelName}");
+                Console.WriteLine($"{model.aircraftModelId}. {model.aircraftModelType} - {model.aircraftModelName}");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
 
         public void ReadCompanyRepository()
         {
             Console.WriteLine("CompanyRepository");
-            foreach(Company company in companys_db)
+            foreach(Company company in companysDatabase)
             {
                 Console.WriteLine($"{company.companyId}. {company.companyName} [{company.companyCountryId}]");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
 
         public void ReadCountrysRepository()
         {
             Console.WriteLine("CountryRepository");
-            foreach(Country country in countrys_db)
+            foreach(Country country in countrysDatabase)
             {
                 Console.WriteLine($"{country.countryId}. {country.countryCode} - {country.countryName}");
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine("----------------------");
         }
         
         public void ReadAllRepositories()
@@ -70,7 +62,6 @@ namespace Aeroplanes.Reports
         
         public void GenerateReportAircraftInEurope()
         {
-            //List<ReportItem> report = new List<ReportItem>();
             string aircraftTailNumber;
             string modelNumber;
             string modelDescription;
@@ -79,23 +70,29 @@ namespace Aeroplanes.Reports
             string companyCountryName;
             bool isEuCountry;
 
-            foreach(Aircraft aircraft in aircrats_db)
+            foreach(Aircraft aircraft in aircratsDatabase)
             {
                 aircraftTailNumber = aircraft.aircraftRegistrationNumber;
                 AircraftModel aircraftModelData = AircraftModelRepository.Retrieve(aircraft.aircraftModelId);
-                modelNumber = aircraftModelData.aircraftModelType;      //   AircraftModelRepository.Retrieve(aircraft.aircraftModelId).aircraftModelType;
-                modelDescription = aircraftModelData.AircraftModelName; //   AircraftModelRepository.Retrieve(aircraft.aircraftModelId).AircraftModelName;
+                modelNumber = aircraftModelData.aircraftModelType;
+                modelDescription = aircraftModelData.aircraftModelName;
                 Company companyData = CompanyRepository.Retrieve(aircraft.aircraftOwnerId);
                 ownerComapanyName = companyData.companyName;
                 companyCountryCode = CountryRepository.Retrieve(companyData.companyCountryId).countryCode;
                 companyCountryName = CountryRepository.Retrieve(companyData.companyCountryId).countryName;
                 isEuCountry = CountryRepository.Retrieve(companyData.companyCountryId).isEuropeCountry;
+                
+                ReportItem reportItem = new ReportItem();
+                reportItem.aircraftTailNumber = aircraftTailNumber;
+                reportItem.modelNumber = modelNumber;
+                reportItem.modelDescription = modelDescription;
+                reportItem.ownerComapanyName = ownerComapanyName;
+                reportItem.companyCountryCode = companyCountryCode;
+                reportItem.companyCountryName = companyCountryName;
+                reportItem.isEuropeCountry = isEuCountry;
 
-                ReportItemRepository.report.Add(new ReportItem(aircraftTailNumber, modelNumber, modelDescription, ownerComapanyName, companyCountryCode, companyCountryName, isEuCountry));
+                ReportItemRepository.report.Add(reportItem);
             }
-
-            //return report;
         }
-        
     }
 }
